@@ -1,15 +1,32 @@
 import { GlobalContext } from "./GlobalContext"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import axios from "axios"
+
 
 
 const GlobalState = (props) => {
     const [mudaHeader, setMudaHeader] = useState(0)
 
+//     const PegarPokemons =  () => {
+//             axios.get(`https://pokeapi.co/api/v2/pokemon/`)
+//             .then((result) => {
+//                 console.log(result)
+//             })
+//             .catch((error) => {
+//                 console.log(error)
+//             })
 
-    
+//     }
+
+// useEffect(() => {
+//     PegarPokemons()
+// }, [])
+
+
     const data = {
         mudaHeader,
-        setMudaHeader
+        setMudaHeader,
+        // PegarPokemons,
     }
 
     return(

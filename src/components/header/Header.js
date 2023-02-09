@@ -1,7 +1,7 @@
 import { Container, DivLogo, PokedexButton, Retorna, Excluir, Engloba } from "./Styled"
 import logo from "../../assets/logo.png"
 import { useNavigate } from "react-router-dom"
-import {goToPokedex} from '../../routes/coordinator'
+import {goToDetails, goToListPage, goToPokedex} from '../../routes/coordinator'
 import { useContext } from "react"
 import { GlobalContext } from "../../contexts/GlobalContext"
 
@@ -12,13 +12,13 @@ export default function Header (){
     const {mudaHeader, setMudaHeader} = context
     
 
-    if(mudaHeader === 2){
+    if(mudaHeader === 0){
         return(
             <Container>
                 <DivLogo>
                 <img src={logo} />
                 </DivLogo>
-                <PokedexButton onClick={() => goToPokedex(navigate)} >Pokédex</PokedexButton>
+                <PokedexButton onClick={() => goToPokedex(navigate, setMudaHeader)} >Pokédex</PokedexButton>
             </Container>
         )
     }
@@ -26,7 +26,7 @@ export default function Header (){
     if(mudaHeader === 1){
         return(
             <Container>
-                <Retorna>Todos Pokémons</Retorna>
+                <Retorna onClick={() => goToListPage(navigate, setMudaHeader)} >Todos Pokémons</Retorna>
                 <DivLogo>
                     <img src={logo} />
                 </DivLogo>
@@ -34,14 +34,14 @@ export default function Header (){
         )
     }
 
-    if(mudaHeader === 0){
+    if(mudaHeader === 2){
         return(
             <Container>
-                <Retorna>Todos Pokémons</Retorna>
+                <Retorna onClick={() => goToListPage(navigate, setMudaHeader)} >Todos Pokémons</Retorna>
                 <DivLogo>
                     <img src={logo} />
                 </DivLogo>
-                <Excluir>Excluir da Pokedex</Excluir>
+                <Excluir onClick={() => goToDetails(navigate, setMudaHeader)} >Excluir da Pokedex</Excluir>
             </Container>
         )
     }
