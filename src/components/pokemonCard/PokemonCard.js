@@ -4,6 +4,6 @@
 export default function PokemonCard (props) {
     
     return(
-        <p> {props.pokemon.name} </p>
+        <p  key={props.index}> {props.pokemon.name} </p>
     )
 }

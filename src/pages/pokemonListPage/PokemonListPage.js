@@ -9,30 +9,17 @@ import axios from "axios";
 
 export default function PokemonListPage () {
 
+    const context = useContext(GlobalContext)
+    const {pokemons} = context
 
-    const [pokemons, setPokemons] = useState([])
-    
-    const PegarPokemons =  () => {
-        axios.get(`https://pokeapi.co/api/v2/pokemon/`)
-        .then((result) => {
-            console.log(result.data.results)
-            setPokemons(result.data.results)
-        })
-        .catch((error) => {
-            console.log(error)
-        })
-}
 
-useEffect(() => {
-    PegarPokemons()
-}, [])
 
     return(
         <>
         <h1>Não é bug burro</h1>
-        {pokemons.map((pokemon) => {
+        {pokemons.map((pokemon, index) => {
             return(
-                <PokemonCard pokemon={pokemon} />
+                <PokemonCard pokemon={pokemon} index={index} />
             )
         })}
         </>

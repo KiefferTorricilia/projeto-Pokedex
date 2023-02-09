@@ -7,26 +7,56 @@ import axios from "axios"
 const GlobalState = (props) => {
     const [mudaHeader, setMudaHeader] = useState(0)
 
+    const [pokemons, setPokemons] = useState([])
+
+    const PegarPokemons = async () => {
+        const url = []
+
+        try {
+            const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/`)
+            // console.log(result)
+            setPokemons(result.data.results)
+            const pokemons = result.data.results
+            try {
+                for(let i in pokemons){
+                    let newResult = await axios.get(pokemons[i].url)
+                    url.push(newResult.data)
+                    console.log(url)
+                }
+                
+            } catch (error) {
+                console.log(error)
+            }
+
+        } catch (error) {
+            
+        }
+    }
+    
+
+
 //     const PegarPokemons =  () => {
-//             axios.get(`https://pokeapi.co/api/v2/pokemon/`)
-//             .then((result) => {
-//                 console.log(result)
-//             })
-//             .catch((error) => {
-//                 console.log(error)
-//             })
+//         axios.get(`https://pokeapi.co/api/v2/pokemon/`)
+//         .then((result) => {
+//             console.log(result.data.results)
+//             setPokemons(result.data.results)
+//         })
+//         .catch((error) => {
+//             console.log(error)
+//         })
+// }
 
-//     }
-
-// useEffect(() => {
-//     PegarPokemons()
-// }, [])
+useEffect(() => {
+    PegarPokemons()
+}, [])
 
 
     const data = {
         mudaHeader,
         setMudaHeader,
-        // PegarPokemons,
+        pokemons,
+        setPokemons,
+        PegarPokemons,
     }
 
     return(
