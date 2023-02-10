@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import { Cor } from "./Styled";
+import { Cor, Largura } from "./Styled";
 import PokemonCard from "../../components/pokemonCard/PokemonCard";
 import axios from "axios";
+import { ChakraProvider } from "@chakra-ui/react";
 
 
 
@@ -15,13 +16,17 @@ export default function PokemonListPage () {
 
 
     return(
-        <>
-        <h1>Não é bug burro</h1>
+        
+        <Largura>
+        <Header/>
         {pokemons.map((pokemon, index) => {
-            return(
-                <PokemonCard pokemon={pokemon} index={index} />
-            )
-        })}
-        </>
-    )
-}
+        return(
+            <PokemonCard pokemon={pokemon} index={index} />
+        )
+    })}
+        </Largura>
+
+        )
+    }
+
+   
