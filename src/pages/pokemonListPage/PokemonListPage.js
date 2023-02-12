@@ -21,7 +21,7 @@ export default function PokemonListPage () {
         <Header/>
         {pokemons.map((pokemon, index) => {
         return(
-            <PokemonCard pokemon={pokemon} index={index} />
+            <PokemonCard key={index}  pokemon={pokemon} />
         )
     })}
         </Largura>
