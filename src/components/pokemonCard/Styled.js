@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 
-export const Organizar = styled.div`
 
-`
 
 export const Container = styled.div`
 height: 210px;

@@ -10,7 +10,6 @@ export default function PokemonCard () {
 
 
     return(
-        <Organizar>
         <Container>
             <Id>#01</Id>
             <Name>Bulbasaur</Name>
@@ -21,6 +20,5 @@ export default function PokemonCard () {
             <PokebolaImagem src={Pokebola} />
             <Capturar>Capturar!</Capturar>
         </Container>
-        </Organizar>
     )
 }
