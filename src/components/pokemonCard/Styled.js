@@ -43,6 +43,7 @@ export const Teste = styled.img`
 
 
 export const Container = styled.div`
+
 height: 210px;
 width: 440px;
 left: 0px;
@@ -209,8 +210,6 @@ left: 23px;
 text-decoration: underline;
 background: none;
 border-style: none;
-
-
 `
 
 export const PokebolaImagem = styled.img`
