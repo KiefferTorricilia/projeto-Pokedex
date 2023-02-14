@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-// const corDeFundo = (cor) => {
-//     if(cor === 'grass'){
-//         return '#729F92'
-//     } else if (cor === 'fire'){
-//         return '#EAAB7D'
-//     } else if (cor === 'water'){
-//         return '#71C3FF'
-//     } else if (cor === 'bug'){
-//         return '#76A866'
-//     } else if (cor === 'normal'){
-//         return '#BF9762'
-//     }
-    
-// }
 
 const corDeFundo = (cor) => {
     
@@ -28,10 +14,32 @@ switch(cor){
 		return '#76A866'
 	case "normal":
 		return '#BF9762'
-	default:
-		console.log("Deu merda");	
 }
 }
+
+const corTipo = (cor) => {
+
+    switch(cor){
+        case "grass":
+            return '#70B873';
+        case "fire":
+            return '#F44900'
+        case "water":
+            return '#33A4F5'
+        case "bug":
+            return '#316520'
+        case "normal":
+            return '#8A8A8A'
+        case 'flying':
+            return '#6892B0'
+        case 'poison':
+            return '#AD61AE'
+    }
+}
+
+export const Teste = styled.img`
+`
+
 
 
 export const Container = styled.div`
@@ -127,7 +135,7 @@ height: 21px;
 left: 23px;
 top: 100px;
 
-background: #AD61AE;
+background: ${(props) => corTipo(props.variant) };
 border: 1px dashed rgba(255, 255, 255, 0.47);
 border-radius: 8px;
 
@@ -157,8 +165,8 @@ height: 21px;
 left: 129px;
 top: 100px;
 
-background: #70B873;
-border: 1px dashed rgba(255, 255, 255, 0.47);
+background: ${(props) => corTipo(props.variant)};
+border: ${(props) => props.variant === undefined ? "none" : "1px dashed rgba(255, 255, 255, 0.47)"};
 border-radius: 8px;
 
 //Letras

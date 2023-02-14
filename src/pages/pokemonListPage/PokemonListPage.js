@@ -19,7 +19,7 @@ export default function PokemonListPage () {
         <Largura>
         <Header/>
         {dados.map((pokemon, index) => {
-            console.log(pokemon)
+            // console.log(pokemon)
         return(
             <PokemonCard key={index}  pokemon={pokemon} />
         )
