@@ -4,10 +4,14 @@ import Poison from "../../assets/Poison.png"
 import Grass from '../../assets/Grass.png'
 import Bulbassauro from "../../assets/Bulbassauro.png"
 import Pokebola from '../../assets/Pokebola.png'
+import { useContext } from "react"
+import { GlobalContext } from "../../contexts/GlobalContext"
 
 
-export default function PokemonCard () {
+export default function PokemonCard (props) {
 
+    const context = useContext(GlobalContext)
+  
 
     return(
         <Container>

@@ -11,8 +11,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 export default function PokemonListPage () {
 
     const context = useContext(GlobalContext)
-    const {pokemons} = context
-
+    const {pokemons, url, dados} = context
+    // console.log(dados)
 
 
     return(
@@ -21,7 +21,7 @@ export default function PokemonListPage () {
         <Header/>
         {pokemons.map((pokemon, index) => {
         return(
-            <PokemonCard key={index}  pokemon={pokemon} />
+            <PokemonCard key={index} url={url}  pokemon={pokemon} />
         )
     })}
         </Largura>
