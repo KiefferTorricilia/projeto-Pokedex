@@ -8,41 +8,29 @@ const GlobalState = (props) => {
     const [mudaHeader, setMudaHeader] = useState(0)
 
     const [pokemons, setPokemons] = useState([])
+
     const [dados, setDados] = useState([])
     // `https://pokeapi.co/api/v2/pokemon/`
 
 
-    // const PegarPokemons = async (setEstado, estado) => {
-
-    //     let todosPokemons = []
-    //     let pegaId = 0;
-    //     while (pegaId < 20) {
-    //         pegaId++
-    //         let arrayTypes = []
-    //         try {
-    //             const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pegaId}`)
-    //             const tiposDeObjetos = result.data
-    //             todosPokemons.push(tiposDeObjetos)
-    //             setEstado([...estado, todosPokemons])
-    //         } catch (error) {
-                
-    //         }
-    //     }
-    // }
+   
 
 
     const PegarPokemons = async (arrayEstado, estado) => {
         const copiaEstado = [...arrayEstado];
         let pegaId = 0;
         while (pegaId <= 20) {
-          pegaId = pegaId + 1;
+          pegaId++;
           let arrayTypes = [];
           let arrayMoves = [];
+
           try {
             const response = await axios.get(`
               https://pokeapi.co/api/v2/pokemon/${pegaId}
               `);
+
             const objTypes = response.data.types;
+            
             for (let j in objTypes) {
               let pegaTypes = objTypes[j].type.name;
               arrayTypes.push(pegaTypes);
@@ -50,6 +38,7 @@ const GlobalState = (props) => {
                 break;
               }
             }
+            
             const moves = response.data.moves;
             for (let j in moves) {
               let pegaMoves = moves[j].move.name;
@@ -59,6 +48,7 @@ const GlobalState = (props) => {
               }
               // console.log(response.data)
             }
+            
             copiaEstado.push({
               name: response.data.name,
               id: response.data.id,
@@ -76,15 +66,12 @@ const GlobalState = (props) => {
         }
       };
 
-    // const apenasPar = url.filter((item, indice, array) => {
-    //     return indice % 2 == 0
-    // })
-    // console.log(apenasPar)
+  
 
     useEffect(() => {
         PegarPokemons(dados, setDados)
     }, [])
-    console.log(dados)
+    // console.log(dados)
 
     const data = {
         mudaHeader,
@@ -92,6 +79,7 @@ const GlobalState = (props) => {
         pokemons,
         setPokemons,
         PegarPokemons,
+        dados,
 
     }
 

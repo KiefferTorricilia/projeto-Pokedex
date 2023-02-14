@@ -8,18 +8,18 @@ import { useContext } from "react"
 import { GlobalContext } from "../../contexts/GlobalContext"
 
 
-export default function PokemonCard (props) {
+export default function PokemonCard ({pokemon}) {
 
-    const context = useContext(GlobalContext)
+   
   
 
     return(
-        <Container>
-            <Id>#01</Id>
-            <Name>Bulbasaur</Name>
-            <Type> <img src={Poison} />  poison</Type>
-            <Type2> <img src={Grass}  /> grass</Type2>
-            <Imagem src={Bulbassauro} /> 
+        <Container variant={pokemon.type[0]} >
+            <Id> #{pokemon.id} </Id>
+            <Name> {pokemon.name} </Name>
+            <Type> <img src={Poison} />  {pokemon.type[0]} </Type>
+            <Type2> <img src={Grass}  /> {pokemon.type[1]} </Type2>
+            <Imagem src={pokemon.img} /> 
             <Detalhes>Detalhes</Detalhes>
             <PokebolaImagem src={Pokebola} />
             <Capturar>Capturar!</Capturar>

@@ -1,6 +1,37 @@
 import styled from "styled-components";
 
+// const corDeFundo = (cor) => {
+//     if(cor === 'grass'){
+//         return '#729F92'
+//     } else if (cor === 'fire'){
+//         return '#EAAB7D'
+//     } else if (cor === 'water'){
+//         return '#71C3FF'
+//     } else if (cor === 'bug'){
+//         return '#76A866'
+//     } else if (cor === 'normal'){
+//         return '#BF9762'
+//     }
+    
+// }
 
+const corDeFundo = (cor) => {
+    
+switch(cor){
+	case "grass":
+		return '#729F92';
+	case "fire":
+		return '#EAAB7D'
+	case "water":
+		return '#71C3FF'
+	case "bug":
+		return '#76A866'
+	case "normal":
+		return '#BF9762'
+	default:
+		console.log("Deu merda");	
+}
+}
 
 
 export const Container = styled.div`
@@ -10,7 +41,7 @@ left: 0px;
 top: 0px;
 border-radius: 12px;
 
-background: #729F92;
+background: ${(props) => corDeFundo(props.variant)};
 
 position: relative;
 width: 440px;
@@ -143,10 +174,14 @@ color: #FFFFFF;
 `
 
 export const Imagem = styled.img`
+height: 193px;
+width: 193px;
+border-radius: 0px;
 position: relative;
+left: 240px;
 bottom: 50px;
-right: 10px;
-margin-left: 250px;
+
+
 `
 
 export const Detalhes = styled.button`
