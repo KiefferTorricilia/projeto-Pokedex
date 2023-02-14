@@ -57,19 +57,18 @@ height: 36px;
 left: 100px;
 top: 62px;
 
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 36px;
-/* identical to box height */
-
+border-style: none;
 text-decoration-line: underline;
 
 color: #1A1A1A;
-
-/* border-style: none; */
 background-color: white;
+`
+
+export const Sinal = styled.img`
+
+
+position: relative;
+right: 10.38px;
 `
 
 export const Excluir = styled.button`

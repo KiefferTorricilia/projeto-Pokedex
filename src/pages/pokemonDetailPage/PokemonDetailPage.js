@@ -1,8 +1,9 @@
+import { Titulo } from "./Styled";
 
 
 export default function PokemonDetailPage () {
 
     return(
-        <h1>Essa é a página de detalhes</h1>
+        <Titulo>Essa é a página de detalhes</Titulo>
     )
 }

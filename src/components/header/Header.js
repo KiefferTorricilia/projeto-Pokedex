@@ -1,9 +1,10 @@
-import { Container, DivLogo, PokedexButton, Retorna, Excluir, Engloba } from "./Styled"
+import { Container, DivLogo, PokedexButton, Retorna, Excluir, Sinal } from "./Styled"
 import logo from "../../assets/logo.png"
 import { useNavigate } from "react-router-dom"
 import {goToDetails, goToListPage, goToPokedex} from '../../routes/coordinator'
 import { useContext } from "react"
 import { GlobalContext } from "../../contexts/GlobalContext"
+import Menos from '../../assets/Menos.png'
 
 export default function Header (){
     const navigate = useNavigate()
@@ -26,7 +27,7 @@ export default function Header (){
     if(mudaHeader === 1){
         return(
             <Container>
-                <Retorna onClick={() => goToListPage(navigate, setMudaHeader)} >Todos Pokémons</Retorna>
+                <Retorna onClick={() => goToListPage(navigate, setMudaHeader)} > <Sinal src={Menos} /> Todos Pokémons</Retorna>
                 <DivLogo>
                     <img src={logo} />
                 </DivLogo>
