@@ -12,15 +12,19 @@ import Pokebola from '../../assets/Pokebola.png'
 import { useContext } from "react"
 import { GlobalContext } from "../../contexts/GlobalContext"
 import { useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { goToDetails } from '../../routes/coordinator'
 
 
 export default function PokemonCard({ pokemon }) {
+
+    const navigate = useNavigate()
 
     const location = useLocation()
     console.log(location)
 
     const context = useContext(GlobalContext)
-    const {pokedex, setPokedex, dados, setDados} = context
+    const {pokedex, setPokedex, dados, setDados, setMudaHeader} = context
 
     const filtroPokemon = (pokemon) => {
         const copiaPokedex = [...pokedex]
@@ -58,6 +62,8 @@ export default function PokemonCard({ pokemon }) {
         }
     }
 
+    
+
 
 
     return (
@@ -67,7 +73,7 @@ export default function PokemonCard({ pokemon }) {
             <Type variant={pokemon.type[0]}> <img src={imagem(pokemon.type[0])}/>  {pokemon.type[0]} </Type>             
             <Type2 variant={pokemon.type[1]}> <img src={imagem(pokemon.type[1])}/> {pokemon.type[1]} </Type2>
             <Imagem src={pokemon.img} />
-            <Detalhes>Detalhes</Detalhes>
+            <Detalhes onClick={() => goToDetails(navigate, setMudaHeader ) } >Detalhes</Detalhes>
             <PokebolaImagem src={Pokebola} />
             <Capturar onClick={() => {
                 filtroPokemon(pokemon)
