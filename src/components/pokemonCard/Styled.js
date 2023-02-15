@@ -50,6 +50,8 @@ left: 0px;
 top: 0px;
 border-radius: 12px;
 
+
+
 background: ${(props) => corDeFundo(props.variant)};
 
 position: relative;
@@ -233,9 +235,6 @@ border-radius: 8px;
 
 border-style: none;
 
-
-
-
 font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
@@ -247,7 +246,7 @@ line-height: 24px;
 color: #0F0F0F;
 
 position: absolute;
-left: 250px;
+left: 275px;
 bottom: 10px;
 `
 

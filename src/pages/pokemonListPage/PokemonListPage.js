@@ -19,7 +19,9 @@ export default function PokemonListPage () {
         <Header/>
         <Cor>Todos os Pokémons</Cor>
         <Largura> 
-        {dados.map((pokemon, index) => {
+        {dados
+        // .filter((banana) => !)
+        .map((pokemon, index) => {
             // console.log(pokemon)
             return(
                 <PokemonCard key={index}  pokemon={pokemon} />
@@ -27,7 +29,6 @@ export default function PokemonListPage () {
             })}
         </Largura>
             </>
-
         )
     }
 

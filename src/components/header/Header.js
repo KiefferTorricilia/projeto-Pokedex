@@ -38,7 +38,7 @@ export default function Header (){
     if(mudaHeader === 2){
         return(
             <Container>
-                <Retorna onClick={() => goToListPage(navigate, setMudaHeader)} >Todos Pokémons</Retorna>
+                <Retorna onClick={() => goToListPage(navigate, setMudaHeader)} > <Sinal src={Menos} /> Todos Pokémons</Retorna>
                 <DivLogo>
                     <img src={logo} />
                 </DivLogo>

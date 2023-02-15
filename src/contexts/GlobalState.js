@@ -10,6 +10,8 @@ const GlobalState = (props) => {
     const [pokemons, setPokemons] = useState([])
 
     const [dados, setDados] = useState([])
+    const [pokedex, setPokedex] = useState([])
+
     // `https://pokeapi.co/api/v2/pokemon/`
 
 
@@ -80,6 +82,8 @@ const GlobalState = (props) => {
         setPokemons,
         PegarPokemons,
         dados,
+        pokedex,
+        setPokedex,
 
     }
 

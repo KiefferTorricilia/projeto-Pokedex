@@ -25,6 +25,7 @@ gap: 1vw;
 row-gap: 4vw;
 background-color: #5E5E5E;
 position: relative;
+
 /* height: 400vh; */
 `
 

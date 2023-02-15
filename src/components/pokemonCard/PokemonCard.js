@@ -15,6 +15,19 @@ import { GlobalContext } from "../../contexts/GlobalContext"
 
 export default function PokemonCard({ pokemon }) {
 
+    const context = useContext(GlobalContext)
+    const {pokedex, setPokedex} = context
+
+    const filtroPokemon = (pokemon) => {
+        const copiaPokedex = [...pokedex]
+        const verificacao = copiaPokedex.find((item) => item.id === pokemon.id  )
+        if(verificacao === undefined){
+            copiaPokedex.push(pokemon)
+        }
+        setPokedex(copiaPokedex)
+    }
+    console.log(pokedex)
+
     const imagem = (type) => {
         switch (type) {
             case "grass":
@@ -31,8 +44,6 @@ export default function PokemonCard({ pokemon }) {
                 return Fly;
             case 'poison':
                 return Poison;
-            default:
-                console.log("Deu merda");
         }
     }
 
@@ -42,16 +53,14 @@ export default function PokemonCard({ pokemon }) {
         <Container variant={pokemon.type[0]} >
             <Id> #{pokemon.id} </Id>
             <Name> {pokemon.name} </Name>
-            <Type variant={pokemon.type[0]}> <img src={imagem(pokemon.type[0])}/>  {pokemon.type[0]} </Type>
-           
-                
+            <Type variant={pokemon.type[0]}> <img src={imagem(pokemon.type[0])}/>  {pokemon.type[0]} </Type>             
             <Type2 variant={pokemon.type[1]}> <img src={imagem(pokemon.type[1])}/> {pokemon.type[1]} </Type2>
-            
-
             <Imagem src={pokemon.img} />
             <Detalhes>Detalhes</Detalhes>
             <PokebolaImagem src={Pokebola} />
-            <Capturar>Capturar!</Capturar>
+            <Capturar onClick={() => {
+                filtroPokemon(pokemon)
+            }} >Capturar!</Capturar>
         </Container>
     )
 }
