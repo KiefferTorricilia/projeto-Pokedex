@@ -11,9 +11,13 @@ import Bulbassauro from "../../assets/Bulbassauro.png"
 import Pokebola from '../../assets/Pokebola.png'
 import { useContext } from "react"
 import { GlobalContext } from "../../contexts/GlobalContext"
+import { useLocation } from "react-router-dom"
 
 
 export default function PokemonCard({ pokemon }) {
+
+    const location = useLocation()
+    console.log(location)
 
     const context = useContext(GlobalContext)
     const {pokedex, setPokedex, dados, setDados} = context
@@ -68,7 +72,7 @@ export default function PokemonCard({ pokemon }) {
             <Capturar onClick={() => {
                 filtroPokemon(pokemon)
                 filtroPokelist(pokemon)
-            }} >Capturar!</Capturar>
+            }} variant={location.pathname} > {location.pathname === '/' ? "Capturar!" : "Excluir" } </Capturar>
         </Container>
     )
 }

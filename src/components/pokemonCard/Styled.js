@@ -230,7 +230,7 @@ padding: 4px 10px;
 width: 146px;
 height: 38px;
 
-background: #FFFFFF;
+background: ${(props) => props.variant === '/' ? "#FFFFFF" : "#FF6262"}  ;
 border-radius: 8px;
 
 border-style: none;
@@ -243,7 +243,8 @@ line-height: 24px;
 /* identical to box height */
 
 
-color: #0F0F0F;
+/* color: #0F0F0F; */
+color:  ${(props) => props.variant === '/' ? "#0F0F0F " : "#FFFFFF" } ;
 
 position: absolute;
 left: 275px;
