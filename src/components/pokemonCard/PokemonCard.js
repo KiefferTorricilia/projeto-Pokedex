@@ -16,7 +16,7 @@ import { GlobalContext } from "../../contexts/GlobalContext"
 export default function PokemonCard({ pokemon }) {
 
     const context = useContext(GlobalContext)
-    const {pokedex, setPokedex} = context
+    const {pokedex, setPokedex, dados, setDados} = context
 
     const filtroPokemon = (pokemon) => {
         const copiaPokedex = [...pokedex]
@@ -26,7 +26,14 @@ export default function PokemonCard({ pokemon }) {
         }
         setPokedex(copiaPokedex)
     }
-    console.log(pokedex)
+
+    const filtroPokelist = (pokemon) => {
+        const filtro = dados.filter((pokemons) => {
+            return pokemons !== pokemon
+        })
+         setDados(filtro)
+    }
+
 
     const imagem = (type) => {
         switch (type) {
@@ -60,6 +67,7 @@ export default function PokemonCard({ pokemon }) {
             <PokebolaImagem src={Pokebola} />
             <Capturar onClick={() => {
                 filtroPokemon(pokemon)
+                filtroPokelist(pokemon)
             }} >Capturar!</Capturar>
         </Container>
     )

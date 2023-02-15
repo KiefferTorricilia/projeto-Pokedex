@@ -82,6 +82,7 @@ const GlobalState = (props) => {
         setPokemons,
         PegarPokemons,
         dados,
+        setDados,
         pokedex,
         setPokedex,
 

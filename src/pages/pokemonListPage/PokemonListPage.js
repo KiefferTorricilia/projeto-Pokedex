@@ -20,7 +20,6 @@ export default function PokemonListPage () {
         <Cor>Todos os Pokémons</Cor>
         <Largura> 
         {dados
-        // .filter((banana) => !)
         .map((pokemon, index) => {
             // console.log(pokemon)
             return(
