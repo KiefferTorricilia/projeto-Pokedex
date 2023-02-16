@@ -79,7 +79,7 @@ top: 51px;
 border-radius: 8px;
 padding: 4px 10px 4px 10px;
 
-
+border-style: none;
 
 display: flex;
 flex-direction: row;
