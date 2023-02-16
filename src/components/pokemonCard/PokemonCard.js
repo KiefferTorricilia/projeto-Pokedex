@@ -21,7 +21,6 @@ export default function PokemonCard({ pokemon }) {
     const navigate = useNavigate()
 
     const location = useLocation()
-    // console.log(location)
 
     const context = useContext(GlobalContext)
     const {pokedex, setPokedex, dados, setDados, setMudaHeader} = context
@@ -68,6 +67,7 @@ export default function PokemonCard({ pokemon }) {
                 return pokemons !== pokemon
             })
             setPokedex(filtro)
+            setDados([...dados, pokemon])
         }
 
     }
