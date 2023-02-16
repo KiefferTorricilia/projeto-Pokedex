@@ -41,6 +41,9 @@ flex-wrap: wrap;
 
 export const BoxImagem = styled.div`
 
+display: flex;
+align-items: center;
+justify-content: center;
 
 height: 282px;
 width: 282px;
@@ -51,6 +54,10 @@ border: 2px solid #FFFFFF;
 background-color: white;
 
 position: relative;
+`
+
+export const Imagem = styled.img`
+height: 100%;
 `
 
 export const BaseStats = styled.div`

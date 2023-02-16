@@ -11,7 +11,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 export default function PokemonListPage () {
 
     const context = useContext(GlobalContext)
-    const {pokemons, dados} = context
+    const {dados} = context
 
 
     return(

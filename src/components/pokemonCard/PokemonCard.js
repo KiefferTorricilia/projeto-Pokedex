@@ -23,7 +23,7 @@ export default function PokemonCard({ pokemon }) {
     const location = useLocation()
 
     const context = useContext(GlobalContext)
-    const {pokedex, setPokedex, dados, setDados, setMudaHeader} = context
+    const {pokedex, setPokedex, dados, setDados, setMudaHeader, setDetalhes} = context
 
     const filtroPokemon = (pokemon) => {
         const copiaPokedex = [...pokedex]
@@ -72,7 +72,9 @@ export default function PokemonCard({ pokemon }) {
 
     }
 
-    
+    const filtroDetails = (pokemon) => {
+        setDetalhes(pokemon)
+    }
 
 
 
@@ -83,7 +85,9 @@ export default function PokemonCard({ pokemon }) {
             <Type variant={pokemon.type[0]}> <img src={imagem(pokemon.type[0])}/>  {pokemon.type[0]} </Type>             
             <Type2 variant={pokemon.type[1]}> <img src={imagem(pokemon.type[1])}/> {pokemon.type[1]} </Type2>
             <Imagem src={pokemon.img} />
-            <Detalhes onClick={() => goToDetails(navigate, setMudaHeader ) } >Detalhes</Detalhes>
+            <Detalhes onClick={() => {
+                filtroDetails(pokemon)
+                goToDetails(navigate, setMudaHeader )} } >Detalhes</Detalhes>
             <PokebolaImagem src={Pokebola} />
             <Capturar onClick={() => {
                 filtroPokemon(pokemon)

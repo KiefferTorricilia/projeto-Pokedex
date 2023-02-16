@@ -1,9 +1,14 @@
-import { Titulo, Container, ContainerDetalhes, BoxImagem, BaseStats } from "./Styled";
+import { Titulo, Container, ContainerDetalhes, BoxImagem, BaseStats, Imagem } from "./Styled";
 import Header from '../../components/header/Header'
+import { useContext } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 export default function PokemonDetailPage () {
 
-
+    const context = useContext(GlobalContext)
+    const {detalhes} = context
+    console.log(detalhes)
 
     return(
         <>
@@ -12,10 +17,10 @@ export default function PokemonDetailPage () {
         <Titulo>Detalhes</Titulo>
         <ContainerDetalhes>
             <BoxImagem>
-            Bulbasauro
+            <Imagem src={detalhes.frontDetail} />
             </BoxImagem>
             <BoxImagem>
-            Charizard
+            <Imagem src={detalhes.backDetail} />
             </BoxImagem>
             <BaseStats>
             Estatus

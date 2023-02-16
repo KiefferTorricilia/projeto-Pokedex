@@ -7,7 +7,7 @@ import axios from "axios"
 const GlobalState = (props) => {
     const [mudaHeader, setMudaHeader] = useState(0)
 
-    const [pokemons, setPokemons] = useState([])
+    const [detalhes, setDetalhes] = useState([])
 
     const [dados, setDados] = useState([])
     const [pokedex, setPokedex] = useState([])
@@ -78,13 +78,13 @@ const GlobalState = (props) => {
     const data = {
         mudaHeader,
         setMudaHeader,
-        pokemons,
-        setPokemons,
         PegarPokemons,
         dados,
         setDados,
         pokedex,
         setPokedex,
+        detalhes,
+        setDetalhes,
 
     }
 
