@@ -10,6 +10,7 @@ export default function PokedexPage () {
     const context = useContext(GlobalContext)
     const {pokedex} = context
 
+
     return (
         <>
         <Header />
