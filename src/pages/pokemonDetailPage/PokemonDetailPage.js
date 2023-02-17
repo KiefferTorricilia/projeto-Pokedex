@@ -41,7 +41,7 @@ export default function PokemonDetailPage() {
                 return Poison;
         }
     }
-// stats
+
    
 
 
@@ -50,7 +50,7 @@ export default function PokemonDetailPage() {
             <Header />
             <Container>
                 <Titulo>Detalhes</Titulo>
-                <ContainerDetalhes>
+                <ContainerDetalhes variant={detalhes.type[0]} >
                     <BoxImagem>
                         <Imagem src={detalhes.frontDetail} />
                     </BoxImagem>

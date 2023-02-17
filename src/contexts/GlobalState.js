@@ -21,7 +21,7 @@ const GlobalState = (props) => {
     const PegarPokemons = async (arrayEstado, estado) => {
         const copiaEstado = [...arrayEstado];
         let pegaId = 0;
-        while (pegaId <= 20) {
+        while (pegaId <= 21) {
           pegaId++;
           let arrayTypes = [];
           let arrayMoves = [];

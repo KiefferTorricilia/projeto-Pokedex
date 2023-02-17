@@ -1,5 +1,20 @@
 import styled from "styled-components";
 
+const corDeFundo = (cor) => {
+    
+    switch(cor){
+        case "grass":
+            return '#729F92';
+        case "fire":
+            return '#EAAB7D'
+        case "water":
+            return '#71C3FF'
+        case "bug":
+            return '#76A866'
+        case "normal":
+            return '#BF9762'
+    }
+    }
 
 const corTipo = (cor) => {
 
@@ -49,7 +64,7 @@ height: 110vh;
 position: absolute;
 top: 330px;
 border-radius: 37.88571548461914px;
-background: #729F92;
+background: ${(props) => corDeFundo(props.variant)};
 
 display: flex;
 flex-direction: column;
