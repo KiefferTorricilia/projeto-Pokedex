@@ -8,7 +8,7 @@ export default function Router() {
     return(
 
         <BrowserRouter>
-
+        
         <Routes>
 
             <Route index element={<PokemonListPage/>} />

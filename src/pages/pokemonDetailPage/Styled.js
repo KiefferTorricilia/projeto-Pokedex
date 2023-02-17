@@ -80,8 +80,8 @@ export const Imagem = styled.img`
 height: 100%;
 `
 
-export const BaseStats = styled.div`
-width: 343px;
+export const Stats = styled.div`
+width: 410px;
 height: 623px;
 position: relative;
 top: 24px;
@@ -268,6 +268,38 @@ color: #000000;
 
 
 `
+
+export const BaseStats = styled.div`
+font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 29px;
+position: absolute;
+top: 19px;
+left: 18px;
+`
+
+export const ProgressBar = styled.div`
+  --progress: ${((props) => {return props.variant} )};
+  height: 20px;
+  padding: 5px;
+  /* background-color: #ccc; */
+  display: flex;
+  gap: 20px;
+  position: relative;
+  top: 60px;
+  left: 15px;
+  text-transform: uppercase;
+  
+
+  &:after {
+    content: "";
+    width: calc(var(--progress) * 1%);
+    background-color: hsl( calc(var(--progress) * 1.2) , 80%, 50%);
+  }
+`
+
 
 
 

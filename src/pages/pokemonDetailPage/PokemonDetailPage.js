@@ -1,6 +1,6 @@
 import {
-    Titulo, Container, ContainerDetalhes, BoxImagem, BaseStats, Imagem, Id, Name, Type, Type2,
-    ImagemGrande, PokebolaDeFundo, Moves, TituloMoves, Movimentos
+    Titulo, Container, ContainerDetalhes, BoxImagem, Stats, Imagem, Id, Name, Type, Type2,
+    ImagemGrande, PokebolaDeFundo, Moves, TituloMoves, Movimentos, ProgressBar, BaseStats
 } from "./Styled";
 import Header from '../../components/header/Header'
 import { useContext } from "react";
@@ -41,6 +41,9 @@ export default function PokemonDetailPage() {
                 return Poison;
         }
     }
+// stats
+   
+
 
     return (
         <>
@@ -54,9 +57,16 @@ export default function PokemonDetailPage() {
                     <BoxImagem>
                         <Imagem src={detalhes.backDetail} />
                     </BoxImagem>
-                    <BaseStats>
-                        Estatus
-                    </BaseStats>
+                    <Stats>
+                        <BaseStats> Base Stats </BaseStats>
+                        <ProgressBar variant={detalhes.stats[0].base_stat} > {detalhes.stats[0].stat.name}  {detalhes.stats[0].base_stat} </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[1].base_stat} > {detalhes.stats[1].stat.name}  {detalhes.stats[1].base_stat} </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[2].base_stat} > {detalhes.stats[2].stat.name}  {detalhes.stats[2].base_stat} </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[3].base_stat} > {detalhes.stats[3].stat.name}  {detalhes.stats[3].base_stat} </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[4].base_stat} > {detalhes.stats[4].stat.name}  {detalhes.stats[4].base_stat} </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[5].base_stat} > {detalhes.stats[5].stat.name}  {detalhes.stats[5].base_stat} </ProgressBar>
+                        <ProgressBar> Total </ProgressBar>
+                    </Stats>
                     <Id> #{detalhes.id} </Id>
                     <Name> {detalhes.name} </Name>
                     <Type variant={detalhes.type[0]}> <img src={imagem(detalhes.type[0])} />  {detalhes.type[0]} </Type>

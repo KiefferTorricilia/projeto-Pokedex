@@ -12,7 +12,7 @@ export default function PokemonListPage () {
 
     const context = useContext(GlobalContext)
     const {dados} = context
-
+   
 
     return(
         <>

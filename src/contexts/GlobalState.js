@@ -1,6 +1,7 @@
 import { GlobalContext } from "./GlobalContext"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import { useLocation } from "react-router-dom"
 
 
 
@@ -12,7 +13,6 @@ const GlobalState = (props) => {
     const [dados, setDados] = useState([])
     const [pokedex, setPokedex] = useState([])
 
-    // `https://pokeapi.co/api/v2/pokemon/`
 
 
    

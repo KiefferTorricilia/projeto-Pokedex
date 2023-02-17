@@ -24,7 +24,7 @@ export default function PokemonCard({ pokemon }) {
 
     const context = useContext(GlobalContext)
     const {pokedex, setPokedex, dados, setDados, setMudaHeader, setDetalhes} = context
-
+    
     const filtroPokemon = (pokemon) => {
         const copiaPokedex = [...pokedex]
         const verificacao = copiaPokedex.find((item) => item.id === pokemon.id  )
