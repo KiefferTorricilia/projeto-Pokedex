@@ -44,10 +44,9 @@ background-color: #5E5E5E;
 `
 
 export const ContainerDetalhes = styled.div`
-width: 95vw;
+width: 99vw;
 height: 110vh;
 position: absolute;
-left: 25px;
 top: 330px;
 border-radius: 37.88571548461914px;
 background: #729F92;
@@ -67,7 +66,7 @@ justify-content: center;
 
 height: 282px;
 width: 282px;
-left: 44px;
+left: 20px;
 top: 26px;
 border-radius: 8px;
 border: 2px solid #FFFFFF;
@@ -81,11 +80,11 @@ height: 100%;
 `
 
 export const Stats = styled.div`
-width: 410px;
+width: 560px;
 height: 623px;
 position: relative;
 top: 24px;
-right: 250px;
+right: 230px;
 
 
 background: #FFFFFF;
@@ -96,7 +95,7 @@ export const Id = styled.div`
 position: absolute;
 width: 30px;
 height: 19px;
-left: 774px;
+left: 880px;
 top: 24px;
 
 font-family: 'Inter';
@@ -112,7 +111,7 @@ export const Name = styled.div`
 position: absolute;
 width: 238px;
 height: 58px;
-left: 771px;
+left: 880px;
 top: 39px;
 
 font-family: 'Inter';
@@ -138,7 +137,7 @@ gap: 17px;
 position: absolute;
 width: 80px;
 height: 21px;
-left: 772px;
+left: 880px;
 top: 100px;
 
 background: ${(props) => corTipo(props.variant) };
@@ -169,7 +168,7 @@ gap: 17px;
 position: absolute;
 width: 80px;
 height: 21px;
-left: 885px;
+left: 990px;
 top: 100px;
 
 background: ${(props) => corTipo(props.variant)};
@@ -193,14 +192,14 @@ position: absolute;
 width: 270px;
 height: 270px;
 
-left: 1000px;
+left: 1090px;
 bottom: 545px;
 `
 
 export const PokebolaDeFundo = styled.img`
 height: 675px;
 width: 650px;
-left: 644px;
+left: 720px;
 
 border-radius: 0px;
 
@@ -216,7 +215,7 @@ flex-wrap: wrap;
 position: absolute;
 width: 292px;
 height: 463px;
-left: 771px;
+left: 870px;
 top: 184px;
 
 background: #FFFFFF;
@@ -289,12 +288,13 @@ export const ProgressBar = styled.div`
   gap: 20px;
   position: relative;
   top: 60px;
-  left: 15px;
   text-transform: uppercase;
   
 
   &:after {
     content: "";
+    border-radius: 12px;
+    height: 10px;
     width: calc(var(--progress) * 1%);
     background-color: hsl( calc(var(--progress) * 1.2) , 80%, 50%);
   }
