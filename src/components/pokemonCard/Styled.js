@@ -1,44 +1,7 @@
 import styled from "styled-components";
+import { useCorDeFundo } from "../../hooks/useCorDeFundo";
+import { useCorTipo } from "../../hooks/useCorTipo";
 
-
-const corDeFundo = (cor) => {
-    
-switch(cor){
-	case "grass":
-		return '#729F92';
-	case "fire":
-		return '#EAAB7D'
-	case "water":
-		return '#71C3FF'
-	case "bug":
-		return '#76A866'
-	case "normal":
-		return '#BF9762'
-}
-}
-
-const corTipo = (cor) => {
-
-    switch(cor){
-        case "grass":
-            return '#70B873';
-        case "fire":
-            return '#F44900'
-        case "water":
-            return '#33A4F5'
-        case "bug":
-            return '#316520'
-        case "normal":
-            return '#8A8A8A'
-        case 'flying':
-            return '#6892B0'
-        case 'poison':
-            return '#AD61AE'
-    }
-}
-
-export const Teste = styled.img`
-`
 
 
 
@@ -52,7 +15,7 @@ border-radius: 12px;
 
 
 
-background: ${(props) => corDeFundo(props.variant)};
+background: ${(props) => useCorDeFundo(props.variant)};
 
 position: relative;
 width: 440px;
@@ -138,7 +101,7 @@ height: 21px;
 left: 23px;
 top: 100px;
 
-background: ${(props) => corTipo(props.variant) };
+background: ${(props) => useCorTipo(props.variant) };
 border: 1px dashed rgba(255, 255, 255, 0.47);
 border-radius: 8px;
 
@@ -168,7 +131,7 @@ height: 21px;
 left: 129px;
 top: 100px;
 
-background: ${(props) => corTipo(props.variant)};
+background: ${(props) => useCorTipo(props.variant)};
 border: ${(props) => props.variant === undefined ? "none" : "1px dashed rgba(255, 255, 255, 0.47)"};
 border-radius: 8px;
 
