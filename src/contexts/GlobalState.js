@@ -1,7 +1,6 @@
 import { GlobalContext } from "./GlobalContext"
 import { useEffect, useState } from "react"
 import axios from "axios"
-import { useLocation } from "react-router-dom"
 import Poison from "../assets/Poison.png"
 import Grass from '../assets/Grass.png'
 import Bug from '../assets/Bug.png'
@@ -9,7 +8,6 @@ import Fire from '../assets/Fire.png'
 import Fly from '../assets/Fly.png'
 import Normal from '../assets/Normal.png'
 import Water from '../assets/Water.png'
-import Bulbassauro from "../assets/Bulbassauro.png"
 
 
 

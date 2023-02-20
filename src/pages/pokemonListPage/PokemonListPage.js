@@ -1,10 +1,9 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import Header from "../../components/header/Header";
 import { GlobalContext } from "../../contexts/GlobalContext";
-import { Cor, Largura, Titulo } from "./Styled";
+import { Cor, Largura} from "./Styled";
 import PokemonCard from "../../components/pokemonCard/PokemonCard";
-import axios from "axios";
-import { ChakraProvider } from "@chakra-ui/react";
+
 
 
 

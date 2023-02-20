@@ -1,7 +1,7 @@
 import { Container, DivLogo, PokedexButton, Retorna, Excluir, Sinal } from "./Styled"
 import logo from "../../assets/logo.png"
 import { useLocation, useNavigate } from "react-router-dom"
-import {goToDetails, goToListPage, goToPokedex} from '../../routes/coordinator'
+import {goToListPage, goToPokedex} from '../../routes/coordinator'
 import { useContext } from "react"
 import { GlobalContext } from "../../contexts/GlobalContext"
 import Menos from '../../assets/Menos.png'

@@ -4,7 +4,6 @@ import {
 } from "./Styled";
 import Header from '../../components/header/Header'
 import { useContext } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { GlobalContext } from "../../contexts/GlobalContext";
 import Grass from '../../assets/Grass.png'
 import Bug from '../../assets/Bug.png'
