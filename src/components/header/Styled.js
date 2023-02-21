@@ -93,7 +93,8 @@ height: 57px;
 left: 1174px;
 top: 51px;
 
-background: #FF6262;
+/* background: #FF6262; */
+background: ${(props) => props.variant === undefined ? "green" : "#FF6262" };
 border-radius: 8px;
 
 font-family: 'Poppins';

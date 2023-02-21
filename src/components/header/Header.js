@@ -70,7 +70,7 @@ export default function Header (){
                 <DivLogo>
                     <img src={logo} />
                 </DivLogo>
-                <Excluir onClick={() => {
+                <Excluir variant={pokedex.find((itens) => itens === detalhes)}  onClick={() => {
                     adicionaFromDetails()
                     excluirFromDetails()
                     }} > {pokedex.find((itens) => itens === detalhes) === undefined ? "Adicionar Pokemon" : "Excluir Pokemon" } </Excluir>
