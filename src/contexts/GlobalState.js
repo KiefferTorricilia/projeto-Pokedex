@@ -21,7 +21,7 @@ const GlobalState = (props) => {
 
  
 
-    const filtroPokemon = (pokemon) => {
+    const adicionaPokedex = (pokemon) => {
       const copiaPokedex = [...pokedex]
       const verificacao = copiaPokedex.find((item) => item.id === pokemon.id  )
       if(verificacao === undefined){
@@ -55,12 +55,6 @@ const imagem = (type) => {
           return Poison;
   }
 }
-
-
-
-
-
-   
 
 
     const PegarPokemons = async (arrayEstado, estado) => {
@@ -130,7 +124,7 @@ const imagem = (type) => {
         setPokedex,
         detalhes,
         setDetalhes,
-        filtroPokemon,
+        adicionaPokedex,
         filtroPokelist,
         imagem,
 

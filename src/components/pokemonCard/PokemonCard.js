@@ -14,7 +14,7 @@ export default function PokemonCard({ pokemon }) {
     const location = useLocation()
 
     const context = useContext(GlobalContext)
-    const { pokedex, setPokedex, dados, setDados, setMudaHeader, setDetalhes, filtroPokemon, filtroPokelist, imagem } = context
+    const { pokedex, setPokedex, dados, setDados, setMudaHeader, setDetalhes, adicionaPokedex, filtroPokelist, imagem } = context
 
 
     const excluir = (pokemon) => {
@@ -46,7 +46,7 @@ export default function PokemonCard({ pokemon }) {
             }} >Detalhes</Detalhes>
             <PokebolaImagem src={Pokebola} />
             <Capturar onClick={() => {
-                filtroPokemon(pokemon)
+                adicionaPokedex(pokemon)
                 filtroPokelist(pokemon)
                 excluir(pokemon)
             }} variant={location.pathname} > {location.pathname === '/' ? "Capturar!" : "Excluir"} </Capturar>

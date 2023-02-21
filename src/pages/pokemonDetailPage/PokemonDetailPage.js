@@ -20,7 +20,7 @@ export default function PokemonDetailPage() {
 
     const context = useContext(GlobalContext)
     const { detalhes } = context
-    console.log(detalhes)
+    
 
     const imagem = (type) => {
         switch (type) {

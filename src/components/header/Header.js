@@ -8,19 +8,36 @@ import Menos from '../../assets/Menos.png'
 
 export default function Header (){
     const navigate = useNavigate()
-    const location= useLocation()
+    const location = useLocation()
 
     const context = useContext(GlobalContext)
-    const {mudaHeader, setMudaHeader, pokedex, setPokedex, dados, setDados, detalhes} = context
+    const {mudaHeader, setMudaHeader, pokedex, setPokedex, dados, setDados, detalhes, filtroPokelist} = context
 
     const excluirFromDetails = () => {
-        if(location.pathname !== "/"){
+        const copiaPokedex = [...pokedex]
+        const verificacao = copiaPokedex.find((itens) => {
+            return itens === detalhes
+        })
+        if(verificacao !== undefined){
             const filtro =  pokedex.filter((pokemons) => {
                     return pokemons !== detalhes
                 })
                 setPokedex(filtro)
                 setDados([...dados, detalhes])
             }
+    }
+
+    const adicionaFromDetails = () => {
+        const copiaPokedex = [...pokedex]
+        const verificacao = pokedex.find((itens) => {
+           return itens === detalhes
+        })
+        console.log(verificacao)
+       if(verificacao === undefined){
+            copiaPokedex.push(detalhes)
+       }
+       setPokedex(copiaPokedex)
+       filtroPokelist(detalhes)
     }
     
 
@@ -53,7 +70,10 @@ export default function Header (){
                 <DivLogo>
                     <img src={logo} />
                 </DivLogo>
-                <Excluir onClick={() => {excluirFromDetails()}} >Excluir da Pokedex</Excluir>
+                <Excluir onClick={() => {
+                    adicionaFromDetails()
+                    excluirFromDetails()
+                    }} > {pokedex.find((itens) => itens === detalhes) === undefined ? "Adicionar Pokemon" : "Excluir Pokemon" } </Excluir>
             </Container>
         )
     }
