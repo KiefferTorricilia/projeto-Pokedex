@@ -63,7 +63,7 @@ height: 100%;
 `
 
 export const Stats = styled.div`
-width: 343px;
+width: 358px;
 height: 623px;
 position: relative;
 top: 24px;
@@ -265,7 +265,7 @@ left: 18px;
 export const NomeStat = styled.span`
 position: relative;
 top: 80px;
-left: 27px;
+left: 20px;
 
 `
 
