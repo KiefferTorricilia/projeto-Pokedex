@@ -1,6 +1,6 @@
 import {
     Titulo, Container, ContainerDetalhes, BoxImagem, Stats, Imagem, Id, Name, Type, Type2,
-    ImagemGrande, PokebolaDeFundo, Moves, TituloMoves, Movimentos, ProgressBar, BaseStats
+    ImagemGrande, PokebolaDeFundo, Moves, TituloMoves, Movimentos, ProgressBar, BaseStats, NomeStat
 } from "./Styled";
 import Header from '../../components/header/Header'
 import { useContext } from "react";
@@ -41,6 +41,16 @@ export default function PokemonDetailPage() {
         }
     }
 
+    const total = (status) => {
+        console.log("executa")
+        console.log(status)
+        let total = 0
+        status.map((itens) => {
+            total = total + itens.base_stat
+            console.log(total)
+        })
+        return total
+    }
    
 
 
@@ -58,13 +68,13 @@ export default function PokemonDetailPage() {
                     </BoxImagem>
                     <Stats>
                         <BaseStats> Base Stats </BaseStats>
-                        <ProgressBar variant={detalhes.stats[0].base_stat} > {detalhes.stats[0].stat.name}  {detalhes.stats[0].base_stat} </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[1].base_stat} > {detalhes.stats[1].stat.name}  {detalhes.stats[1].base_stat} </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[2].base_stat} > {detalhes.stats[2].stat.name}  {detalhes.stats[2].base_stat} </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[3].base_stat} > {detalhes.stats[3].stat.name}  {detalhes.stats[3].base_stat} </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[4].base_stat} > {detalhes.stats[4].stat.name}  {detalhes.stats[4].base_stat} </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[5].base_stat} > {detalhes.stats[5].stat.name}  {detalhes.stats[5].base_stat} </ProgressBar>
-                        <ProgressBar> Total </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[0].base_stat} > <NomeStat> HP  {detalhes.stats[0].base_stat} </NomeStat> </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[1].base_stat} > <NomeStat> ATTACK {detalhes.stats[1].base_stat} </NomeStat> </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[2].base_stat} > <NomeStat> DEFENSE {detalhes.stats[2].base_stat} </NomeStat> </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[3].base_stat} > <NomeStat> Sp.ATK  {detalhes.stats[3].base_stat} </NomeStat> </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[4].base_stat} > <NomeStat> Sp.DEF  {detalhes.stats[4].base_stat} </NomeStat> </ProgressBar>
+                        <ProgressBar variant={detalhes.stats[5].base_stat} > <NomeStat> SPEED  {detalhes.stats[5].base_stat} </NomeStat> </ProgressBar>
+                        <ProgressBar> Total {total(detalhes.stats)}  </ProgressBar>
                     </Stats>
                     <Id> #{detalhes.id} </Id>
                     <Name> {detalhes.name} </Name>

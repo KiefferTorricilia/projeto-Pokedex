@@ -26,10 +26,11 @@ background-color: #5E5E5E;
 `
 
 export const ContainerDetalhes = styled.div`
-width: 99vw;
-height: 110vh;
+width: 96vw;
+height: 663px;
 position: absolute;
 top: 330px;
+right: 25px;
 border-radius: 37.88571548461914px;
 background: ${(props) => useCorDeFundo(props.variant)};
 
@@ -48,7 +49,7 @@ justify-content: center;
 
 height: 282px;
 width: 282px;
-left: 20px;
+left: 44px;
 top: 26px;
 border-radius: 8px;
 border: 2px solid #FFFFFF;
@@ -62,11 +63,11 @@ height: 100%;
 `
 
 export const Stats = styled.div`
-width: 560px;
+width: 343px;
 height: 623px;
 position: relative;
 top: 24px;
-right: 230px;
+right: 265px;
 
 
 background: #FFFFFF;
@@ -77,7 +78,7 @@ export const Id = styled.div`
 position: absolute;
 width: 30px;
 height: 19px;
-left: 880px;
+left: 780px;
 top: 24px;
 
 font-family: 'Inter';
@@ -93,7 +94,7 @@ export const Name = styled.div`
 position: absolute;
 width: 238px;
 height: 58px;
-left: 880px;
+left: 780px;
 top: 39px;
 
 font-family: 'Inter';
@@ -119,7 +120,7 @@ gap: 17px;
 position: absolute;
 width: 80px;
 height: 21px;
-left: 880px;
+left: 780px;
 top: 100px;
 
 background: ${(props) => useCorTipo(props.variant) };
@@ -150,7 +151,7 @@ gap: 17px;
 position: absolute;
 width: 80px;
 height: 21px;
-left: 990px;
+left: 890px;
 top: 100px;
 
 background: ${(props) => useCorTipo(props.variant)};
@@ -174,14 +175,14 @@ position: absolute;
 width: 270px;
 height: 270px;
 
-left: 1090px;
+left: 1050px;
 bottom: 545px;
 `
 
 export const PokebolaDeFundo = styled.img`
 height: 675px;
-width: 650px;
-left: 720px;
+width: 670px;
+left: 639px;
 
 border-radius: 0px;
 
@@ -197,7 +198,7 @@ flex-wrap: wrap;
 position: absolute;
 width: 292px;
 height: 463px;
-left: 870px;
+left: 770px;
 top: 184px;
 
 background: #FFFFFF;
@@ -261,12 +262,16 @@ top: 19px;
 left: 18px;
 `
 
+export const NomeStat = styled.span`
+`
+
 export const ProgressBar = styled.div`
   --progress: ${((props) => {return props.variant} )};
-  height: 20px;
+  width: 230px;
+  height: 25px;
   padding: 5px;
-  /* background-color: #ccc; */
   display: flex;
+  justify-content: flex-start;
   gap: 20px;
   position: relative;
   top: 60px;
@@ -278,7 +283,7 @@ export const ProgressBar = styled.div`
     border-radius: 12px;
     height: 10px;
     width: calc(var(--progress) * 1%);
-    background-color: hsl( calc(var(--progress) * 1.2) , 80%, 50%);
+    background-color: hsl( calc(var(--progress) * 0.6) , 80%, 50%);
   }
 `
 
