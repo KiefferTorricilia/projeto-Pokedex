@@ -68,13 +68,13 @@ export default function PokemonDetailPage() {
                     </BoxImagem>
                     <Stats>
                         <BaseStats> Base Stats </BaseStats>
-                        <ProgressBar variant={detalhes.stats[0].base_stat} > <NomeStat> HP  {detalhes.stats[0].base_stat} </NomeStat> </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[1].base_stat} > <NomeStat> ATTACK {detalhes.stats[1].base_stat} </NomeStat> </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[2].base_stat} > <NomeStat> DEFENSE {detalhes.stats[2].base_stat} </NomeStat> </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[3].base_stat} > <NomeStat> Sp.ATK  {detalhes.stats[3].base_stat} </NomeStat> </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[4].base_stat} > <NomeStat> Sp.DEF  {detalhes.stats[4].base_stat} </NomeStat> </ProgressBar>
-                        <ProgressBar variant={detalhes.stats[5].base_stat} > <NomeStat> SPEED  {detalhes.stats[5].base_stat} </NomeStat> </ProgressBar>
-                        <ProgressBar> Total {total(detalhes.stats)}  </ProgressBar>
+                        <NomeStat> HP  {detalhes.stats[0].base_stat} </NomeStat> <ProgressBar variant={detalhes.stats[0].base_stat} > </ProgressBar>
+                        <NomeStat> Attack {detalhes.stats[1].base_stat} </NomeStat> <ProgressBar variant={detalhes.stats[1].base_stat} > </ProgressBar>
+                        <NomeStat> Defense {detalhes.stats[2].base_stat} </NomeStat><ProgressBar variant={detalhes.stats[2].base_stat} >  </ProgressBar>
+                        <NomeStat> Sp.Atk  {detalhes.stats[3].base_stat} </NomeStat><ProgressBar variant={detalhes.stats[3].base_stat} >  </ProgressBar>
+                        <NomeStat> Sp.Def  {detalhes.stats[4].base_stat} </NomeStat> <ProgressBar variant={detalhes.stats[4].base_stat} > </ProgressBar>
+                        <NomeStat> Speed  {detalhes.stats[5].base_stat} </NomeStat> <ProgressBar variant={detalhes.stats[5].base_stat} > </ProgressBar>
+                        <NomeStat> Total {total(detalhes.stats)}  </NomeStat>
                     </Stats>
                     <Id> #{detalhes.id} </Id>
                     <Name> {detalhes.name} </Name>

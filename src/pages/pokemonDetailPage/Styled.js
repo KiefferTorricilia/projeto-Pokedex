@@ -263,6 +263,10 @@ left: 18px;
 `
 
 export const NomeStat = styled.span`
+position: relative;
+top: 80px;
+left: 27px;
+
 `
 
 export const ProgressBar = styled.div`
@@ -271,19 +275,21 @@ export const ProgressBar = styled.div`
   height: 25px;
   padding: 5px;
   display: flex;
-  justify-content: flex-start;
-  gap: 20px;
+  gap: 0px;
   position: relative;
   top: 60px;
+  left: 45px;
   text-transform: uppercase;
   
 
   &:after {
+    position: relative;
+    left: 70px;
     content: "";
     border-radius: 12px;
     height: 10px;
     width: calc(var(--progress) * 1%);
-    background-color: hsl( calc(var(--progress) * 0.6) , 80%, 50%);
+    background-color: hsl( calc(var(--progress) * 0.6) , 100%, 50%);
   }
 `
 
