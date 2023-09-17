@@ -6,4 +6,12 @@ Possui uma lista de pokémons disponíveis onde o usuário pode capturá-los par
 
 ![logo](https://github.com/KiefferTorricilia/projeto-Pokedex/assets/95080358/04518adf-0db7-4966-b148-92d8329b1c85)
 
-Essa é a landing Page do projeto, com mais de 20 pokemons para capturar.
+landing Page do projeto, com mais de 20 pokémons para capturar.
+
+![pokedex](https://github.com/KiefferTorricilia/projeto-Pokedex/assets/95080358/ced987f2-ca35-4238-bd90-d12e73e5bd85)
+
+Pokedex, onde ficam os pokémons capturados.
+
+![detalhes](https://github.com/KiefferTorricilia/projeto-Pokedex/assets/95080358/a7073aed-0059-4d4e-9300-611de99eb873)
+
+Página de detalhes de cada Pokémon
